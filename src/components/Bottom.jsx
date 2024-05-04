@@ -2,7 +2,7 @@ import React from 'react'
 
 const Bottom = () => {
   return (
-    <div>
+    <div className='text-center'>
       <hr />
       <h3>Copyright 2024. 함동균 All rights reserved.</h3>
     </div>
