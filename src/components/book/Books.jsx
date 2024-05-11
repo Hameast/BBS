@@ -50,7 +50,7 @@ const Books = () => {
           }
           else{
             set(ref(db, `cart/${uid}/${book.isbn}`), {...book});
-        alert("장바구니에 넣었습니다.");
+            alert("장바구니에 넣었습니다.");
           }
         });
       }
