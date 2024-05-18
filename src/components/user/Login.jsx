@@ -75,6 +75,9 @@ const Login = () => {
                             <div>
                                 <Button className='w-100' type='submit'>Login</Button>
                             </div>
+                            <div  className='text-end'>
+                                <a href='/join'>회원가입</a>
+                            </div>
                         </form>
                     </Card.Body>
                 </Card>

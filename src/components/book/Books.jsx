@@ -24,8 +24,9 @@ const Books = () => {
       headers:{"Authorization":"KakaoAK 008dde331175330016234ac303721b99"}
     };
     const res=await axios.get(url, config);
-    console.log(res.data);
+    // console.log(res.data);
     setBooks(res.data.documents)
+    setEnd(res.data.meta.is_end)
     setLoading(false);
   };
 
@@ -46,7 +47,7 @@ const Books = () => {
         //장바구니에 이미 있는 지 확인
         get(ref(db, `cart/${uid}/${book.isbn}`)).then(snapshot=>{
           if(snapshot.exists()){
-            alert("이미 장바구니에 담은 도서입니다.")
+            alert("이미 장바구니에 담은 도서입니다.");
           }
           else{
             set(ref(db, `cart/${uid}/${book.isbn}`), {...book});
@@ -56,8 +57,8 @@ const Books = () => {
       }
     }
     else{
-      sessionStorage.setItem('target', '/books')
-      navi('/login')
+      sessionStorage.setItem('target', '/books');
+      navi('/login');
     }
   }
 
@@ -95,7 +96,7 @@ const Books = () => {
       <div className='text-center my-3'>
         <Button onClick={()=>setPage(page-1)} disabled={page === 1}>이전</Button>
         <span className='mx-2'>{page}</span>
-        <Button onClick={()=>setPage(page+1)} disabled={page === end}>다음</Button>
+        <Button onClick={()=>setPage(page+1)} disabled={end}>다음</Button>
       </div>
       
     </div>
