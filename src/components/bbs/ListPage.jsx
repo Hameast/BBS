@@ -11,7 +11,7 @@ const ListPage = () => {
     const uid = sessionStorage.getItem('uid');
     const [posts, setPosts] = useState([]);
     const [page, setPage] = useState(1);
-    const [size, setSize] = useState(3);
+    const [size, setSize] = useState(5);
     const [count, setCount] = useState(0);
 
     const callAPI = () =>{
